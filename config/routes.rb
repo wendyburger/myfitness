@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'ui/(/:action)', controller: 'ui'
+  get 'home', to: 'pages#home'
   get 'register', to: 'users#new'
 
   resources :users, only: [:create, :new]
