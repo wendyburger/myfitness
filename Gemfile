@@ -49,6 +49,10 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'shoulda-matchers', '2.7.0'
+end
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
