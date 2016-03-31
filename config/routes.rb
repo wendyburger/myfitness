@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   get 'ui(/:action)', controller: 'ui'
-  get '/home', to: 'pages#home'
+  get '/home', to: 'posts#index'
   get '/register', to: 'users#new'
   get '/sign_in', to: 'sessions#new'
   post '/sign_in', to: 'sessions#create'
   delete '/sign_out', to: 'sessions#destroy'
 
-  root to: 'pages#home'
+  root to: 'posts#index'
   resources :users, only: [:create]
   resources :sessions, only: [:create]
-  resources :categories, only: [:show]
+  resources :categories
+  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
