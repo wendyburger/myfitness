@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   post '/sign_in', to: 'sessions#create'
   delete '/sign_out', to: 'sessions#destroy'
 
+  root to: 'pages#home'
   resources :users, only: [:create]
   resources :sessions, only: [:create]
+  resources :categories, only: [:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
