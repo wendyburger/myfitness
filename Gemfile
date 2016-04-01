@@ -71,3 +71,5 @@ gem 'bootstrap-material-design'
 gem 'simple_form'
 # Easy file attachment management for ActiveRecord
 gem "paperclip"
+# The official AWS SDK for Ruby
+gem 'aws-sdk', '< 2.0'
