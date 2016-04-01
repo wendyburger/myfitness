@@ -34,8 +34,7 @@ gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Forms made easy for Rails
-gem 'simple_form'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -66,4 +65,7 @@ end
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'font-awesome-rails'
 gem 'bootstrap-material-design'
-
+# Forms made easy for Rails
+gem 'simple_form'
+# Easy file attachment management for ActiveRecord
+gem "paperclip"

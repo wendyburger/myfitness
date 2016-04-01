@@ -1,4 +1,3 @@
-require 'pry'
 class PostsController < ApplicationController
   def index
     @posts = Post.all
@@ -10,14 +9,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    binding.pry
   end
 
   private 
 
   def post_params
-    params.require(:post).permit(:title, :description, category_id: [])
+    params.require(:post).permit(:title, :description, :image, category_id: [])
   end
-
-
 end
