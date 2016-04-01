@@ -41,6 +41,8 @@ group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
   gem 'rspec-rails', '2.99'
+  # Loads environment variables from `.env`.
+  gem 'dotenv-rails'
 end
 
 group :development do
