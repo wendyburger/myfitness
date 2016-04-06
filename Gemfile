@@ -66,10 +66,12 @@ end
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'font-awesome-rails'
-gem 'bootstrap-material-design'
+# gem 'bootstrap-material-design'
 # Forms made easy for Rails
 gem 'simple_form'
 # Easy file attachment management for ActiveRecord
 gem "paperclip"
 # The official AWS SDK for Ruby
 gem 'aws-sdk', '< 2.0'
+# Collection of filters that transform plain text into HTML code
+gem 'auto_html', '~> 1.6'

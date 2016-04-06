@@ -47,8 +47,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    autoprefixer-rails (6.3.5)
-      execjs
+    auto_html (1.6.4)
+      redcarpet (~> 3.1)
+      rinku (~> 1.5.0)
     aws-sdk (1.66.0)
       aws-sdk-v1 (= 1.66.0)
     aws-sdk-v1 (1.66.0)
@@ -57,11 +58,6 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-material-design (0.2.2)
-      bootstrap-sass (~> 3.0)
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.2)
     climate_control (0.0.3)
@@ -169,6 +165,8 @@ GEM
     rake (11.1.1)
     rdoc (4.2.2)
       json (~> 1.4)
+    redcarpet (3.3.4)
+    rinku (1.5.1)
     rspec-collection_matchers (1.0.0)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (2.99.0)
@@ -228,9 +226,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  auto_html (~> 1.6)
   aws-sdk (< 2.0)
   bcrypt (~> 3.1.7)
-  bootstrap-material-design
   byebug
   coffee-rails (~> 4.1.0)
   dotenv-rails
