@@ -1,24 +1,20 @@
 <div class="container">
-  
+  <p>
+    <strong>標題</strong>
+    <%= @post.title %>
+  </p>
 
-<p>
-  <strong>標題</strong>
-  <%= @post.title %>
-</p>
+  <p>
+    <strong>內容</strong>
+    <%= @post.description %>
+  </p>
 
-<p>
-  <strong>內容</strong>
-  <%= @post.description %>
-</p>
+  <p>
+    <div class="panel-body col-md-4"><%= raw(@post.content_html) %></div>
+  </p>
 
-<p>
-  <div class="panel-body col-md-4"><%= raw(@post.content_html) %></div>
-</p>
-
-<p>
-  <%= image_tag @post.image.url(:original), class: "img-responsive" if @post.image.file? %>
-
-</p>
-
- </div>   
+  <p>
+    <%= image_tag @post.image.url(:original), class: "img-responsive" if @post.image.file? %>
+  </p>
+</div>   
     

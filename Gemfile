@@ -75,3 +75,5 @@ gem "paperclip"
 gem 'aws-sdk', '< 2.0'
 # Collection of filters that transform plain text into HTML code
 gem 'auto_html', '~> 1.6'
+# Add Gravatars to your Rubies/Rails
+gem 'gravtastic'

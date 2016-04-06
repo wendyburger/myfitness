@@ -37,6 +37,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+          <li><%= image_tag current_user.gravatar_url %></li>
           <li><%= link_to "登出", sign_out_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "登入", sign_in_path %></li>
