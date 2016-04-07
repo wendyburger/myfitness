@@ -11,6 +11,10 @@ class CategoriesController < ApplicationController
     @category = Category.new(cat_params)
   end
 
+  def show
+    @category = Category.find(params[:id])
+  end
+
   private
 
   def cat_params

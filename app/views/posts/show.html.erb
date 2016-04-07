@@ -1,4 +1,5 @@
-<div class="container">
+<div class="row">
+  <div class='col-md-6 col-md-offset-3'>
   <p>
     <strong>標題</strong>
     <%= @post.title %>
@@ -10,11 +11,12 @@
   </p>
 
   <p>
-    <div class="panel-body col-md-4"><%= raw(@post.content_html) %></div>
+    <div class="panel-body col-md-6"><%= raw(@post.content_html) %></div>
   </p>
 
   <p>
     <%= image_tag @post.image.url(:original), class: "img-responsive" if @post.image.file? %>
   </p>
+  </div>
 </div>   
     

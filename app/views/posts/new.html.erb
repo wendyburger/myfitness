@@ -2,19 +2,5 @@
   <h1>新增討鞭</h1>
 </div>
 
-<div class='container'>
-  <div class='form-group'>
-  <%= simple_form_for @post do |f| %>
-    <%= f.input :title, label: "標題", placeholder: "title" %>
-    <%= f.input :description, as: :text, :input_html => { :rows => 10 }, label: "內容", placeholder: "description" %>
-    <%= f.input :content, label: "連結", placeholder: "youtube link" %>
-    <%= f.input :image, label: "照片" %>
-    <%= f.collection_radio_buttons(:category_id, Category.all, :id, :name) do |cd| %>
-      <% cd.label(class: 'radio-inline') {cd.radio_button(class: 'radio-button') + cd.text} %>
-    <% end %>
-    </br>
-    <%= f.button :submit, "新增", class: 'btn btn-lg btn-primary' %>
-  <% end %>
-  </div>
-</div>
+<%= render 'posts/post' %>
 
