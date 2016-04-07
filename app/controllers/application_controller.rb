@@ -15,5 +15,10 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def access_denied
+    flash[:error] = "你沒有權利這樣做"
+    redirect_to root_path
+  end
+
   helper_method :current_user, :logged_in?
 end

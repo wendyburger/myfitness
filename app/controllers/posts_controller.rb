@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_filter :require_user, only:[:new, :create]
+  before_action :set_post, only:[:edit, :update, :show]
+  before_action :require_creator, only: [:edit, :update]
   
   def index
     @posts = Post.all
@@ -20,15 +22,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit 
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "你已經成功更新文章"
       redirect_to @post
@@ -42,5 +41,13 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :description, :content, :image, :category_id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def require_creator
+    access_denied unless logged_in? and (current_user == @post.user)
   end
 end
