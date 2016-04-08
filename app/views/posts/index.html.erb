@@ -1,10 +1,10 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6"><h3>近期討論</h3>            
+    <div class="col-md-8"><h3>近期討論</h3>            
       <!-- tabs left -->
       <div class="tabbable tabs-left">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs">         
           <li class="active"><a href="#a" data-toggle="tab">胸肌</a></li>
           <li><a href="#b" data-toggle="tab">背肌</a></li>
           <li><a href="#c" data-toggle="tab">肩膀</a></li>
@@ -16,19 +16,156 @@
           <li><a href="#i" data-toggle="tab">有氧運動</a></li>
         </ul>
         <div class="tab-content">
-         <div class="tab-pane active" id="a">胸肌</div>
-         <div class="tab-pane" id="b">背肌</div>
-         <div class="tab-pane" id="c">肩膀</div>
-         <div class="tab-pane" id="d">手臂</div>
-         <div class="tab-pane" id="e">股四頭肌和小腿肌</div>
-         <div class="tab-pane" id="f">臀肌和腿後肌</div>
-         <div class="tab-pane" id="g">核心肌</div>
-         <div class="tab-pane" id="h">全身訓練</div>
-         <div class="tab-pane" id="i">有氧運動</div>
+          <div class="tab-pane active" id="a">
+            <% @categories.find(1).posts.take(4).each do |post| %>
+              <div class="span4">
+                <p class='pull-left'>
+                  <%= image_tag post.user.gravatar_url %>
+                </p>
+              </div>
+              <div class="span6">
+                <h4><%= post.title %></h4>
+                <p><%= truncate(post.description) %></p>
+                <p><span class='quiet'>Post by</span> <%= link_to post.user.full_name, "" %> at <%= display_datetime(post.created_at) %>
+                </p>
+                <hr>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="tab-pane" id="b">
+            <% @categories.find(2).posts.take(4).each do |post| %>
+              <div class="span4">
+                <p class='pull-left'>
+                  <%= image_tag post.user.gravatar_url %>
+                </p>
+              </div>
+              <div class="span6">
+                <h4><%= post.title %></h4>
+                <p><%= truncate(post.description) %></p>
+                <p><span class='quiet'>Post by</span> <%= link_to post.user.full_name, "" %> at <%= display_datetime(post.created_at) %>
+                </p>
+                <hr>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="tab-pane" id="c">
+            <% @categories.find(3).posts.take(4).each do |post| %>
+              <div class="span4">
+                <p class='pull-left'>
+                  <%= image_tag post.user.gravatar_url %>
+                </p>
+              </div>
+              <div class="span6">
+                <h4><%= post.title %></h4>
+                <p><%= truncate(post.description) %></p>
+                <p><span class='quiet'>Post by</span> <%= link_to post.user.full_name, "" %> at <%= display_datetime(post.created_at) %>
+                </p>
+                <hr>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="tab-pane" id="d">
+            <% @categories.find(4).posts.take(4).each do |post| %>
+              <div class="span4">
+                <p class='pull-left'>
+                  <%= image_tag post.user.gravatar_url %>
+                </p>
+              </div>
+              <div class="span6">
+                <h4><%= post.title %></h4>
+                <p><%= truncate(post.description) %></p>
+                <p><span class='quiet'>Post by</span> <%= link_to post.user.full_name, "" %> at <%= display_datetime(post.created_at) %>
+                </p>
+                <hr>
+              </div>
+            <% end %>
+          </div>
+          <div class="tab-pane" id="e">股四頭肌和小腿肌
+            <% @categories.find(5).posts.take(4).each do |post| %>
+              <div class="span4">
+                <p class='pull-left'>
+                  <%= image_tag post.user.gravatar_url %>
+                </p>
+              </div>
+              <div class="span6">
+                <h4><%= post.title %></h4>
+                <p><%= truncate(post.description) %></p>
+                <p><span class='quiet'>Post by</span> <%= link_to post.user.full_name, "" %> at <%= display_datetime(post.created_at) %>
+                </p>
+                <hr>
+              </div>
+            <% end %>
+          </div>
+          <div class="tab-pane" id="f">臀肌和腿後肌
+            <% @categories.find(6).posts.take(4).each do |post| %>
+              <div class="span4">
+                <p class='pull-left'>
+                  <%= image_tag post.user.gravatar_url %>
+                </p>
+              </div>
+              <div class="span6">
+                <h4><%= post.title %></h4>
+                <p><%= truncate(post.description) %></p>
+                <p><span class='quiet'>Post by</span> <%= link_to post.user.full_name, "" %> at <%= display_datetime(post.created_at) %>
+                </p>
+                <hr>
+              </div>
+            <% end %>
+          </div>
+          <div class="tab-pane" id="g">核心肌
+            <% @categories.find(7).posts.take(4).each do |post| %>
+              <div class="span4">
+                <p class='pull-left'>
+                  <%= image_tag post.user.gravatar_url %>
+                </p>
+              </div>
+              <div class="span6">
+                <h4><%= post.title %></h4>
+                <p><%= truncate(post.description) %></p>
+                <p><span class='quiet'>Post by</span> <%= link_to post.user.full_name, "" %> at <%= display_datetime(post.created_at) %>
+                </p>
+                <hr>
+              </div>
+            <% end %>
+          </div>
+          <div class="tab-pane" id="h">全身訓練
+            <% @categories.find(8).posts.take(4).each do |post| %>
+              <div class="span4">
+                <p class='pull-left'>
+                  <%= image_tag post.user.gravatar_url %>
+                </p>
+              </div>
+              <div class="span6">
+                <h4><%= post.title %></h4>
+                <p><%= truncate(post.description) %></p>
+                <p><span class='quiet'>Post by</span> <%= link_to post.user.full_name, "" %> at <%= display_datetime(post.created_at) %>
+                </p>
+                <hr>
+              </div>
+            <% end %>
+          </div>
+          <div class="tab-pane" id="i">有氧運動
+            <% @categories.find(9).posts.take(4).each do |post| %>
+              <div class="span4">
+                <p class='pull-left'>
+                  <%= image_tag post.user.gravatar_url %>
+                </p>
+              </div>
+              <div class="span6">
+                <h4><%= post.title %></h4>
+                <p><%= truncate(post.description) %></p>
+                <p><span class='quiet'>Post by</span> <%= link_to post.user.full_name, "" %> at <%= display_datetime(post.created_at) %>
+                </p>
+                <hr>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-      <!-- /tabs -->      
-    </div>
+      <!-- /tabs -->     
     </div>    
   </div><!-- /row -->
 </div>

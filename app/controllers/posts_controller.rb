@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :require_creator, only: [:edit, :update]
   
   def index
+    @categories = Category.all
     @posts = Post.all
   end
 
