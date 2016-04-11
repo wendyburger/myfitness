@@ -18,6 +18,7 @@
         <div class="tab-content">
           <div class="tab-pane active" id="a">
             <% @categories.find(1).posts.take(4).each do |post| %>
+              <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
                   <%= image_tag post.user.gravatar_url %>
@@ -35,6 +36,7 @@
 
           <div class="tab-pane" id="b">
             <% @categories.find(2).posts.take(4).each do |post| %>
+              <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
                   <%= image_tag post.user.gravatar_url %>
@@ -52,6 +54,7 @@
 
           <div class="tab-pane" id="c">
             <% @categories.find(3).posts.take(4).each do |post| %>
+              <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
                   <%= image_tag post.user.gravatar_url %>
@@ -69,6 +72,7 @@
 
           <div class="tab-pane" id="d">
             <% @categories.find(4).posts.take(4).each do |post| %>
+              <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
                   <%= image_tag post.user.gravatar_url %>
@@ -85,6 +89,7 @@
           </div>
           <div class="tab-pane" id="e">股四頭肌和小腿肌
             <% @categories.find(5).posts.take(4).each do |post| %>
+              <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
                   <%= image_tag post.user.gravatar_url %>
@@ -101,6 +106,7 @@
           </div>
           <div class="tab-pane" id="f">臀肌和腿後肌
             <% @categories.find(6).posts.take(4).each do |post| %>
+              <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
                   <%= image_tag post.user.gravatar_url %>
@@ -117,6 +123,7 @@
           </div>
           <div class="tab-pane" id="g">核心肌
             <% @categories.find(7).posts.take(4).each do |post| %>
+              <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
                   <%= image_tag post.user.gravatar_url %>
@@ -133,6 +140,7 @@
           </div>
           <div class="tab-pane" id="h">全身訓練
             <% @categories.find(8).posts.take(4).each do |post| %>
+              <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
                   <%= image_tag post.user.gravatar_url %>
@@ -149,6 +157,7 @@
           </div>
           <div class="tab-pane" id="i">有氧運動
             <% @categories.find(9).posts.take(4).each do |post| %>
+              <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
                   <%= image_tag post.user.gravatar_url %>

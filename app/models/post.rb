@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :description
   belongs_to :category
   belongs_to :user
+  has_many :comments
 
   has_attached_file :image
 
