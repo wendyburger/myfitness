@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe 
+
   def index
     @recipes = Recipe.all    
   end
@@ -17,8 +19,15 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show 
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(:dishname, :protocol, :image)
+  end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
   end
 end
