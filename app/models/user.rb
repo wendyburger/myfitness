@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   gravtastic :secure => true,
               :filetype => :gif,
               :size => 50
+
+  def admin?
+    self.role == 'admin'
+  end
 end
