@@ -38,4 +38,81 @@ RSpec.describe UsersController do
       end
     end
   end
+
+  describe 'GET edit' do
+    context 'current user equals the @user' do
+      let(:alice){Fabricate(:user)}
+        before do
+          session[:user_id] = alice.id
+          get :edit, id: alice.id
+        end
+
+      it 'finds the @user' do
+        expect(assigns(:user)).to eq(alice)
+      end 
+
+      it 'renders the edit template' do
+        expect(response).to render_template :edit
+      end
+    end
+
+    context 'current user not equals the @user' do
+      before do
+        alice = Fabricate(:user)
+        bob = Fabricate(:user)
+        session[:user_id] = alice.id
+        get :edit, id: bob.id
+      end
+
+      it 'redirects to root path' do
+        expect(response).to redirect_to root_path
+      end
+
+      it 'set the error notice' do
+        expect(flash[:notice]).not_to be_blank
+      end
+    end
+  end
+
+  describe 'POST update' do
+    context 'with valid input' do
+      let(:alice) {Fabricate(:user)}
+      before do
+        session[:user_id] = alice.id
+        post :update, id: alice.id, 
+          user: Fabricate.attributes_for(:user, 
+            password: 'password', full_name: 'Alice Yang')  
+      end
+
+      it 'update the @user' do       
+        expect(assigns(:user).reload.full_name).to eq('Alice Yang')
+      end
+
+      it 'redirects to root path'do        
+        expect(response).to redirect_to root_path
+      end
+
+      it 'set the notice' do
+        expect(flash[:notice]).not_to be_blank
+      end
+    end
+
+    context 'with invalid input' do
+      let(:alice) {Fabricate(:user, full_name:'Alice Hsu')}
+      before do
+        session[:user_id] = alice.id
+        post :update, id: alice.id, 
+          user: Fabricate.attributes_for(:user, 
+              password: 'password', full_name: nil)
+      end
+
+      it 'does not update the user' do   
+        expect(assigns(:user).reload.full_name).to eq('Alice Hsu')
+      end
+      
+      it 'renders the :edit' do       
+        expect(response).to render_template :edit
+      end
+    end
+  end
 end
