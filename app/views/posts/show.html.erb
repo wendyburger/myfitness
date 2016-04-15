@@ -41,7 +41,7 @@
   <div class='col-md-6 col-md-offset-3'>
   <h5><strong>評論：</strong></h5>
   
-  <% @post.reload.comments.each do |comment| %>
+  <% @comments.reload.each do |comment| %>
     <div class= "col col-md-2">
       <%= image_tag comment.creator.gravatar_url %>
     </div>

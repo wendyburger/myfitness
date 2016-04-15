@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   before_action :require_creator, only: [:edit, :update]
   
   def index
-    @categories = Category.all
     @posts = Post.all
+    @categories = Category.all
   end
 
   def new
@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
+      flash[:notice] = "你已經成功新增文章"
       redirect_to @post
     else
       render :new
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @comments = @post.comments.includes(:creator)
   end
 
   def edit 
