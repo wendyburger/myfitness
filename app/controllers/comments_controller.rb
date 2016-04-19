@@ -10,11 +10,9 @@ class CommentsController < ApplicationController
       flash[:notice] = '你成功新增評論'
       redirect_to post_path(@post)
     else
+      @comments = @post.comments.reload
       render 'posts/show'
     end
-  end
-
-  def show
   end
 
 end

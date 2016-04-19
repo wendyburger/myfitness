@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:creator)
+    # @comments = Comment.includes(:creator).where("comments.post_id = ?", @post)
   end
 
   def edit 
