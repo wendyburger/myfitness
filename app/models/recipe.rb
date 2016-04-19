@@ -1,6 +1,7 @@
 class Recipe < ActiveRecord::Base
   belongs_to :creator, foreign_key: "user_id", class_name: "User"
   has_attached_file :image
+  validates_presence_of :dishname, :protocol
 
 
   validates_attachment_content_type :image, 
