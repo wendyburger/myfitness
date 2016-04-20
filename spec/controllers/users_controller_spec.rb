@@ -115,4 +115,15 @@ RSpec.describe UsersController do
       end
     end
   end
+
+  describe 'GET show' do
+    let(:user) {Fabricate(:user)}
+    before do
+      session[:user_id] = user.id
+      get :show, id: user.id
+    end
+    it 'finds the @user' do
+      expect(assigns(:user)).to eq(user)
+    end
+  end
 end

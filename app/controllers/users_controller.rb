@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update]
   
   def new
@@ -25,6 +25,9 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def show
   end
 
 
