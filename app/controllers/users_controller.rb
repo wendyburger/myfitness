@@ -28,6 +28,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @recipes = @user.recipes
+    @posts = @user.posts
   end
 
 
