@@ -19,6 +19,4 @@ class Post < ActiveRecord::Base
     link target: '_blank', rel: 'nofollow'
     simple_format
   end
-
-  default_scope -> { order(created_at: :desc) }
 end

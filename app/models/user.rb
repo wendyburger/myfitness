@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   
   has_secure_password validations: false
-  has_many :posts
+  has_many :posts, -> { order 'created_at DESC' }
   has_many :comments
-  has_many :recipes
+  has_many :recipes, -> { order 'created_at DESC' }
 
   include Gravtastic
   gravtastic :secure => true,
