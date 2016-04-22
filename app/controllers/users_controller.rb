@@ -29,13 +29,13 @@ class UsersController < ApplicationController
 
   def show
     @recipes = @user.recipes
-    @posts = @user.posts
+    @posts = @user.posts.includes(:category)
   end
 
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :full_name, :time_zone)
+    params.require(:user).permit(:email, :password, :full_name, :avatar, :time_zone)
   end
 
   def set_user
