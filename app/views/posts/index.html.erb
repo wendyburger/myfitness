@@ -17,7 +17,7 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="a">
-            <% @categories.find(1).posts.take(4).each do |post| %>
+            <% @categories.find(i).posts.take(4).each do |post| %>
               <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
@@ -87,7 +87,7 @@
               </div>
             <% end %>
           </div>
-          <div class="tab-pane" id="e">股四頭肌和小腿肌
+          <div class="tab-pane" id="e">
             <% @categories.find(5).posts.take(4).each do |post| %>
               <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
@@ -104,7 +104,7 @@
               </div>
             <% end %>
           </div>
-          <div class="tab-pane" id="f">臀肌和腿後肌
+          <div class="tab-pane" id="f">
             <% @categories.find(6).posts.take(4).each do |post| %>
               <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
@@ -121,7 +121,7 @@
               </div>
             <% end %>
           </div>
-          <div class="tab-pane" id="g">核心肌
+          <div class="tab-pane" id="g">
             <% @categories.find(7).posts.take(4).each do |post| %>
               <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
@@ -138,7 +138,7 @@
               </div>
             <% end %>
           </div>
-          <div class="tab-pane" id="h">全身訓練
+          <div class="tab-pane" id="h">
             <% @categories.find(8).posts.take(4).each do |post| %>
               <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
