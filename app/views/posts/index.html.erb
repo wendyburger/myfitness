@@ -17,7 +17,7 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="a">
-            <% @categories.find(i).posts.take(4).each do |post| %>
+            <% @categories.find(1).posts.take(4).each do |post| %>
               <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">
                 <p class='pull-left'>
