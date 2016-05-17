@@ -155,7 +155,7 @@
               </div>
             <% end %>
           </div>
-          <div class="tab-pane" id="i">有氧運動
+          <div class="tab-pane" id="i">
             <% @categories.find(9).posts.take(4).each do |post| %>
               <p class='pull-right'><%= link_to "[see more...]", post_path(post) %></p>
               <div class="span4">

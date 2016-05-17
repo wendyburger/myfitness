@@ -1,13 +1,13 @@
 <div class='row'>
   <div class='container'>
-    <h3 class='text-center'><%= @recipe.dishname %> <small>by <%= link_to @recipe.creator.full_name, user_path(@recipe.creator) %> </small></h3>
+    <h3 class='text-center'><%= @recipe.dishname %> <small>by <%= link_to @recipe.creator.full_name, user_path(@recipe.creator) %> </small> <%= link_to '修改食譜', edit_recipe_path(@recipe), class: 'btn btn-success' %></h3>
    
     </br>
     <div class='col-md-6 col-md-offset-1'>
       <%= image_tag @recipe.image.url, size: "450" %>
     </div>
     <div class='col-md-4'>
-      <p><%= @recipe.protocol %></p>
+      <pre><%= @recipe.protocol %></pre>
     </div>
   </div>
 </div>
