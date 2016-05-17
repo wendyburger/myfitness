@@ -120,3 +120,8 @@
   border-color: #ddd #ddd #ddd transparent;
   *border-left-color: #ffffff;
 }
+
+pre {
+  border: 0;
+  background-color: transparent;
+}
