@@ -16,6 +16,9 @@
       <ul class="nav navbar-nav">
         <li class="active"></li>
         <% if current_user %>
+          <% if current_user.role == 'admin' %>
+            <li><%= link_to '新增分類', new_category_path %></li>
+          <% end %>
           <li><%= link_to "關於我", user_path(current_user) %></li>
         <% end %>
         <li><%= link_to "新增討鞭", new_post_path %></li>        
